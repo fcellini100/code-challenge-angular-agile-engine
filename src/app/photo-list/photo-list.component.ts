@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Page } from 'src/interfaces/page';
-import { Thumbnail } from 'src/interfaces/thumbnail';
+import { Page } from 'src/app/interfaces/page';
+import { Thumbnail } from 'src/app/interfaces/thumbnail';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-photo-list',
@@ -58,10 +59,14 @@ export class PhotoListComponent implements OnInit {
 
   thumbnailList: Thumbnail[];
 
-  constructor() { }
+  constructor(
+    private photoService: PhotoService
+  ) { }
 
   ngOnInit() {
-    this.thumbnailList = this.MOCK_RESPOSE.pictures;
+    this.photoService.getPhotoList().subscribe((photos: Thumbnail[]) => {
+      this.thumbnailList = photos;
+    });
   }
 
   thumbnailClicked(id: number) {
