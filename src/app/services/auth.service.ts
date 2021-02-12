@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable} from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { AuthResponse } from 'src/app/interfaces/auth-response';
@@ -7,8 +7,7 @@ import { AuthResponse } from 'src/app/interfaces/auth-response';
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   AUTH_URL = 'http://interview.agileengine.com/auth';
   API_KEY = '23567b218376f79d9415';
@@ -20,21 +19,11 @@ export class AuthService {
     const subject = new ReplaySubject<AuthResponse>(1);
     subject.subscribe((r: AuthResponse) => {
       this.setAccessToken(r.token);
-    }, (err) => {
-      this.handleAuthenticationError(err);
     });
 
     postObservable.subscribe(subject);
 
     return subject;
-  }
-
-  isAuthenticated(): boolean {
-    return !!this.getAccessToken();
-  }
-
-  private handleAuthenticationError(err: any) {
-    this.setAccessToken(null);
   }
 
   private setAccessToken(accessToken: string) {
@@ -48,4 +37,5 @@ export class AuthService {
   getAccessToken() {
     return localStorage.getItem('access_token');
   }
+
 }
