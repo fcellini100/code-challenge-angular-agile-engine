@@ -2,5 +2,6 @@
   <app-photo-thumbnail
     *ngFor="let thumbnail of thumbnailList"
     [thumbnail]="thumbnail"
+    (click)="thumbnailClicked(thumbnail.id)"
   ></app-photo-thumbnail>
 </div>
