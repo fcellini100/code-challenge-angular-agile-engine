@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable} from '@angular/core';
 import { Page } from '../interfaces/page';
 import { map } from 'rxjs/operators';
+import { Photo } from '../interfaces/photo';
 
 
 @Injectable({
@@ -18,5 +19,9 @@ export class PhotoService {
       .pipe(
         map((response) => response.pictures)
       );
+  }
+
+  getPhotoDetails(id: number){
+    return this.httpClient.get<Photo>(`${this.PHOTO_LIST}/${id}`);
   }
 }

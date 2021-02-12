@@ -7,22 +7,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoThumbnailComponent } from './photo-thumbnail/photo-thumbnail.component';
 import { PhotoDialogComponent } from './photo-dialog/photo-dialog.component';
-import { MatButtonModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatIconModule } from '@angular/material';
 import { TokenInterceptor } from './services/token-interceptor';
+import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhotoListComponent,
     PhotoThumbnailComponent,
-    PhotoDialogComponent
+    PhotoDialogComponent,
+    PhotoComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [
     {
@@ -31,6 +34,7 @@ import { TokenInterceptor } from './services/token-interceptor';
       multi: true
     }
   ],
+  entryComponents: [PhotoDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

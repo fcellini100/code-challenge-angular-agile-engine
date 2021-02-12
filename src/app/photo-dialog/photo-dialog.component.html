@@ -1,1 +1,7 @@
-<p>photo-dialog works!</p>
+<div mat-dialog-content>
+  <button class="close" mat-button (click)="closeDialog(null)">
+    <mat-icon>clear</mat-icon>
+  </button>
+
+  <app-photo [photo]="photo"></app-photo>
+</div>
