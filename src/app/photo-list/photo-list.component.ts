@@ -64,4 +64,8 @@ export class PhotoListComponent implements OnInit {
     this.thumbnailList = this.MOCK_RESPOSE.pictures;
   }
 
+  thumbnailClicked(id: number) {
+    alert("You clicked " + id);
+  }
+
 }
