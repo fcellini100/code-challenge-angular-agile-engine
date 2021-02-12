@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Page } from 'src/interfaces/page';
-import { Thumbnail } from 'src/interfaces/thumbnail';
+import { Page } from 'src/app/interfaces/page';
+import { Thumbnail } from 'src/app/interfaces/thumbnail';
 
 @Component({
   selector: 'app-photo-list',

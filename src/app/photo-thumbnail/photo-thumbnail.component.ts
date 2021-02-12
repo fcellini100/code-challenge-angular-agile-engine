@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Thumbnail } from 'src/interfaces/thumbnail';
+import { Thumbnail } from 'src/app/interfaces/thumbnail';
 
 @Component({
   selector: 'app-photo-thumbnail',
@@ -9,7 +9,7 @@ import { Thumbnail } from 'src/interfaces/thumbnail';
 export class PhotoThumbnailComponent implements OnInit {
 
   @Input() thumbnail: Thumbnail;
-  
+
   constructor() { }
 
   ngOnInit() {
