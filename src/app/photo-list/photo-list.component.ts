@@ -40,9 +40,7 @@ export class PhotoListComponent implements OnInit {
 
   thumbnailClicked(id: number) {
     this.dialog.open(PhotoDialogComponent, {
-      width: '100%',
-      height: '100%',
-      maxWidth: '80vw',
+      maxWidth: '95vw',
       data: { id }
     });
   }

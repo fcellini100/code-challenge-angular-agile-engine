@@ -9,25 +9,25 @@ import { PhotoService } from '../services/photo.service';
   templateUrl: './photo-dialog.component.html',
   styleUrls: ['./photo-dialog.component.scss']
 })
-export class PhotoDialogComponent implements OnInit {
+export class PhotoDialogComponent {
 
-  photo: Photo;
+  photo: Photo = <Photo>{}
+  loading: boolean;
 
   constructor(
-    public dialogRef: MatDialogRef<PhotoComponent>,
-    public photoService: PhotoService,
+    private dialogRef: MatDialogRef<PhotoComponent>,
+    private photoService: PhotoService,
     @Inject(MAT_DIALOG_DATA) public data: {
       id: number
     })
     {
+      this.loading = true;
       this.photoService.getPhotoDetails(data.id)
         .subscribe(photo => {
+          this.loading = false;
           this.photo = photo;
         })
     }
-
-  ngOnInit() {
-  }
 
   closeDialog(event: any) {
     this.dialogRef.close(event);
