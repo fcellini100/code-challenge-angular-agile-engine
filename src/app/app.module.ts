@@ -7,22 +7,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoThumbnailComponent } from './photo-thumbnail/photo-thumbnail.component';
 import { PhotoDialogComponent } from './photo-dialog/photo-dialog.component';
-import { MatButtonModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatDividerModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
 import { TokenInterceptor } from './services/token-interceptor';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhotoListComponent,
     PhotoThumbnailComponent,
-    PhotoDialogComponent
+    PhotoDialogComponent,
+    PaginatorComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    MatIconModule,
+    MatDividerModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     {
