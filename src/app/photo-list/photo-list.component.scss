@@ -1,5 +1,12 @@
 @import './../../scss/variables';
 
+.list-wrapper {
+  @media (max-width: $portrait-tablet-breakpoint) {
+   height: 90vh;
+   overflow-y: scroll;
+  }
+}
+
 .thumbnail-list-container {
   margin: 1rem;
   display: grid;
@@ -13,3 +20,18 @@
   }
 }
 
+.loading {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+app-paginator {
+  @media (max-width: $portrait-tablet-breakpoint) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 10px 0;
+  }
+}

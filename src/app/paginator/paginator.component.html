@@ -1,0 +1,17 @@
+<div class="paginator-container">
+  <button mat-button 
+    (click)="emitNewPage(page - 1)"
+    [ngClass]="{'disabled': page === 1}"
+  > 
+    <mat-icon>navigate_before</mat-icon>
+  </button>
+
+  <span>{{page}}</span>
+
+  <button mat-button 
+    (click)="emitNewPage(page + 1)"
+    [ngClass]="{'disabled': !hasMore}"
+  > 
+    <mat-icon>navigate_next</mat-icon> 
+  </button>
+</div>

@@ -1,0 +1,20 @@
+@import './../../scss/variables';
+
+:host{
+  background-color: #fff;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.paginator-container{
+  width: fit-content;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  @media (max-width: $portrait-tablet-breakpoint) {
+    padding: 1rem 0;
+  }
+}

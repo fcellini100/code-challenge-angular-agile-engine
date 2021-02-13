@@ -7,8 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoThumbnailComponent } from './photo-thumbnail/photo-thumbnail.component';
 import { PhotoDialogComponent } from './photo-dialog/photo-dialog.component';
-import { MatButtonModule, MatDialogModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatDividerModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
 import { TokenInterceptor } from './services/token-interceptor';
+import { PaginatorComponent } from './paginator/paginator.component';
 import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
@@ -17,15 +18,19 @@ import { PhotoComponent } from './photo/photo.component';
     PhotoListComponent,
     PhotoThumbnailComponent,
     PhotoDialogComponent,
-    PhotoComponent
+    PhotoComponent,
+    PaginatorComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    MatIconModule,
+    MatDividerModule,
     MatDialogModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     {

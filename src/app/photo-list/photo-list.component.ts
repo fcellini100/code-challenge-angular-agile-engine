@@ -14,6 +14,9 @@ import { PhotoService } from '../services/photo.service';
 export class PhotoListComponent implements OnInit {
   
   thumbnailList: Thumbnail[];
+  hasMore: boolean;
+  page: number | null;
+  loading: boolean;
 
   constructor(
     private photoService: PhotoService,
@@ -21,8 +24,17 @@ export class PhotoListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.photoService.getPhotoList().subscribe((photos: Thumbnail[]) => {
-      this.thumbnailList = photos;
+    this.getPhotos(1);
+  }
+
+  getPhotos(page) {
+    this.loading = true;
+    this.thumbnailList = [];
+    this.photoService.getPhotoList(page).subscribe((response: Page) => {
+      this.thumbnailList = response.pictures;
+      this.hasMore = response.hasMore;
+      this.page = response.page;
+      this.loading = false;
     });
   }
 
