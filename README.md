@@ -1,27 +1,19 @@
-# Code Challenge Angular for Agile Engine
+# Code Challenge on Angular for Agile Engine - by Fernando Cellini
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
+## How to run 
+1. Run `npm install`
+2. Run `ng serve` and then navigate to `http://localhost:4200/`.
 
-## Development server
+## Missing points
+1. No navegation from one photo to tne next. I had a few ideas but it would have taken a little more time.
+2. No invalid token validation. Token handling is still something I need to learn better, for now it only checks if the current user is unauthorized, gets the token and retries, otherwise, it shows an error on console
+3. Share buttons. The only thing I've used in the pass was https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share but It has it's limitations. I might have to search for a compatible library, learned how to use it and it would have taken more time, so I desided to leave the feature out for now
+4. Image zoom. I still had the chance to work with images like that and a timed challenge was not the best time to learn it. Although, now I'm actually curious, so I will check that out. Probably can be a good addition to proyect I'm currently working on!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Things I'm not happy with
+1. The mat dialog on mobile looks hidious, I might need to spend a little more time to make it look good. Work with the image inside most likely
+2. The paginator it's rather simple and has some minor glitches when you scroll way to low. It also looks kind of bad on portrait tablet with high resolution
+3. I'm not sure if storing the apikey on a service it's the best practice. I would think there is a more secure way to do it.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
