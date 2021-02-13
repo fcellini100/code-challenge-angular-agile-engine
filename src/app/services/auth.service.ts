@@ -9,8 +9,8 @@ import { AuthResponse } from 'src/app/interfaces/auth-response';
 export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
-  AUTH_URL = 'http://interview.agileengine.com/auth';
-  API_KEY = '23567b218376f79d9415';
+  private AUTH_URL = 'http://interview.agileengine.com/auth';
+  private API_KEY = '23567b218376f79d9415';
 
   auth(): Observable<AuthResponse> {
     const payload = { apiKey: this.API_KEY };
