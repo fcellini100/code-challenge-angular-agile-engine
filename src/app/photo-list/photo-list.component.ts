@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Page } from 'src/app/interfaces/page';
 import { Thumbnail } from 'src/app/interfaces/thumbnail';
+import { Photo } from '../interfaces/photo';
+import { PhotoDialogComponent } from '../photo-dialog/photo-dialog.component';
 import { PhotoService } from '../services/photo.service';
 
 @Component({
@@ -16,7 +19,8 @@ export class PhotoListComponent implements OnInit {
   loading: boolean;
 
   constructor(
-    private photoService: PhotoService
+    private photoService: PhotoService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -35,7 +39,9 @@ export class PhotoListComponent implements OnInit {
   }
 
   thumbnailClicked(id: number) {
-    alert("You clicked " + id);
+    this.dialog.open(PhotoDialogComponent, {
+      maxWidth: '95vw',
+      data: { id }
+    });
   }
-
 }

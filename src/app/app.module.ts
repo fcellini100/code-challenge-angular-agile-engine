@@ -10,6 +10,7 @@ import { PhotoDialogComponent } from './photo-dialog/photo-dialog.component';
 import { MatButtonModule, MatDialogModule, MatDividerModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
 import { TokenInterceptor } from './services/token-interceptor';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PaginatorComponent } from './paginator/paginator.component';
     PhotoListComponent,
     PhotoThumbnailComponent,
     PhotoDialogComponent,
-    PaginatorComponent
+    PhotoComponent,
+    PaginatorComponent,
   ],
   imports: [
     HttpClientModule,
@@ -27,6 +29,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
     MatDividerModule,
     MatDialogModule,
     MatButtonModule,
+    MatIconModule,
     MatProgressSpinnerModule,
   ],
   providers: [
@@ -36,6 +39,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
       multi: true
     }
   ],
+  entryComponents: [PhotoDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
